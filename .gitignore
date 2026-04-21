@@ -1,0 +1,21 @@
+# Compiled binaries
+hue
+hue-linux
+cli
+
+# Dependencies
+node_modules/
+
+# Bun cache
+.bun-cache/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Claude internal
+.claude/
