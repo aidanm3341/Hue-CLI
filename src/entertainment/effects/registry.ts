@@ -18,6 +18,7 @@ export const EFFECT_REGISTRY: EffectMeta[] = [
   { name: "northernlights",  description: "Slow aurora drift through cyan/teal/purple" },
   { name: "sunrise",         description: "5-minute warm-to-daylight fade" },
   { name: "sunset",          description: "5-minute daylight-to-warm fade" },
+  { name: "screen",          description: "Sync lights to screen colours in real-time (Ambilight-style)" },
 ];
 
 export const EFFECT_NAMES = new Set(EFFECT_REGISTRY.map(e => e.name));

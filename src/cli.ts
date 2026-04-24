@@ -10,6 +10,7 @@ import { runScenes, runScene } from "./commands/scenes";
 import { runEffect } from "./commands/effect";
 import { runEffects } from "./commands/effects";
 import { runEntertainmentList, runEntertainmentSelect } from "./commands/entertainment";
+import { runScreen } from "./commands/screen";
 import { runTui } from "./commands/tui";
 
 const program = new Command();
@@ -116,6 +117,16 @@ program
   .description("Activate a scene by name or id")
   .option("--room <name>", "Disambiguate by room name")
   .action((name, opts) => runScene(name, opts));
+
+program
+  .command("screen")
+  .description("Sync lights to screen colours in real-time (Ambilight-style)")
+  .option("--interval <ms>", "Capture interval in milliseconds", "100")
+  .option("--mode <mode>", "spatial (default) or average", "spatial")
+  .option("--smooth", "Smooth colour transitions between captures")
+  .option("--display <n>", "Display index to capture", "1")
+  .option("--duration <s>", "Auto-stop after N seconds")
+  .action((opts) => runScreen(opts));
 
 program
   .command("tui")
